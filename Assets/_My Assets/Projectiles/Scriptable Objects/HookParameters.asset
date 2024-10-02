@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff12cd18af1f98f40845ed0dadf97983, type: 3}
+  m_Name: HookParameters
+  m_EditorClassIdentifier: 
+  minDotToUpperCut: 0
+  canPunchMaxDot: 0
+  handMaxRotationToUpperCut: 180
+  hookDelay: 0.25
+  limitTimeCanHook: 1.31
+  handMinZDistanceFromStartToHook: 0.12
+  handMinDistanceToStartHook: 0.3
+  handMaxYDistanceFromHead: 0.4
+  handMinXDistanceFromStartToHook: 0.3
+  minHandVelocityToTriggerHook: 0.57
+  minHandFrontDistanceToHook: 0.13
+  timeWhenStartHook: 0
+  horizontalDistance: 0
+  handMovedSideways: 0

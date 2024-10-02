@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3202f1aa4a25847a3d5b7c8d04ae89, type: 3}
+  m_Name: PunchParameters
+  m_EditorClassIdentifier: 
+  punchDelay: 0.25
+  minDotToPunch: 0.75
+  canPunchMaxDot: 0.125
+  timeCanPunch: 0.135
+  handMaxRotationToPunch: -27
+  handMinDistanceToPunch: 0.35
+  handMinDistanceFromStartToPunch: 0.4

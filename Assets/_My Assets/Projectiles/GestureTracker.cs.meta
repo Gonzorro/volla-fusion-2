@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b03a0da0cc949d949bb11becf61d65d4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - projectileChannel: {fileID: 11400000, guid: acaca884a0508904aa9a0eb1dd154a8b,
+      type: 2}
+  - punchParameters: {fileID: 11400000, guid: 92ddc0ba98b9d25438ea2a7ed6c4ca74, type: 2}
+  - upperCutParameters: {fileID: 11400000, guid: 3e298dd13e6f95d408086a2a9d85e6bf,
+      type: 2}
+  - hookParameters: {fileID: 11400000, guid: c4d1a5d7f44d4cd4aa3e623bfaa56912, type: 2}
+  - cam: {instanceID: 0}
+  - launchPosition: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

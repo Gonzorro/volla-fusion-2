@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a5d710f0c658ac647b2ccb811ad3b3b3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - projectileChannel: {fileID: 11400000, guid: acaca884a0508904aa9a0eb1dd154a8b,
+      type: 2}
+  - punchParameters: {fileID: 11400000, guid: 92ddc0ba98b9d25438ea2a7ed6c4ca74, type: 2}
+  - cam: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
