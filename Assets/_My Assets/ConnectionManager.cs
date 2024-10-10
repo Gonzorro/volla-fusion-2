@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class ConnectionManager : MonoBehaviour
 {
     [SerializeField] private NetworkRunnerChannel networkRunnerChannel;
-
+    [SerializeField] private GameMode gameMode;
     private NetworkRunner networkRunner;
 
     private void Awake()
@@ -18,7 +18,6 @@ public class ConnectionManager : MonoBehaviour
 
     private void StartGame()
     {
-        var gameMode = GameMode.Shared;
         if (TryGetSceneRef(out var sceneRef))
         {
             networkRunner.StartGame(new StartGameArgs()

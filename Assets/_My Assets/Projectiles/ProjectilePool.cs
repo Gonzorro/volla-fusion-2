@@ -10,12 +10,10 @@ public class ProjectilePool : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private int initialSize = 8;
     [SerializeField] private float projectileLifeTime;
-    [SerializeField] private bool isMatchTypeProjectilePool;
-    [SerializeField] private bool isOnlineScene;
+    [SerializeField] private bool isSingleClassProjectilePool;
 
     [Header("Channels")]
     [SerializeField] private PlatformModeChannel platformChannel;
-    //   [SerializeField] private SceneDataChannel sceneDataChannel;
     [SerializeField] private NetworkRunnerChannel runnerChannel;
     [SerializeField] private PlayerInfoChannel playerInfoChannel;
     [SerializeField] private ProjectileChannel projectileChannel;
@@ -57,7 +55,7 @@ public class ProjectilePool : MonoBehaviour
 
     private void InitializePoolSystem()
     {
-        if (isMatchTypeProjectilePool)
+        if (isSingleClassProjectilePool)
         {
             PlayerClassEnum playerClass = playerInfoChannel.GetPlayerClass();
             ClassProjectiles selectedClassProjectiles = GetClassProjectilesByType(playerClass);
@@ -96,14 +94,12 @@ public class ProjectilePool : MonoBehaviour
             return;
         }
 
-
-        var isOnlineMode = isOnlineScene; // or access scene data if needed
         var playerTeam = playerInfoChannel.GetPlayerTeam();
         var strongHand = playerInfoChannel.GetPlayerStrongHand();
 
         for (int i = 0; i < initialSize; i++)
         {
-            var spawnedProjectile = isOnlineMode ? FindObjectOfType<NetworkRunner>().Spawn(prefab).gameObject : Instantiate(prefab);
+            var spawnedProjectile = FindObjectOfType<NetworkRunner>().Spawn(prefab).gameObject;
             var physicsObject = spawnedProjectile.transform.GetChild(0);
 
             if (spawnedProjectile.TryGetComponent(out Projectile projectileScript) && physicsObject.TryGetComponent(out Rigidbody rb))
@@ -115,7 +111,7 @@ public class ProjectilePool : MonoBehaviour
 
                 targetCache.Add(physicsObject.gameObject, (projectileScript, rb));
                 targetPool.Enqueue(physicsObject.gameObject);
-                projectileScript.InitializeProjectile(playerTeam, isOnlineMode, projectileLifeTime, isPrimary ? HandEnum.RightHand : HandEnum.LeftHand, classProjectiles.classProjectiles);
+                projectileScript.InitializeProjectile(playerTeam, projectileLifeTime, isPrimary ? HandEnum.RightHand : HandEnum.LeftHand, classProjectiles.classProjectiles);
             }
             else
             {
@@ -151,7 +147,7 @@ public class ProjectilePool : MonoBehaviour
             PrimaryHandProjectileLaunch(launchPosition, projectileType, projectileObject.transform, rb);
         else
             SecondaryHandProjectileLaunch(launchPosition, projectileType, projectileObject.transform, rb);
-
+        Debug.LogError("Ativating from pool");
         projectileScript.ActivateProjectile(projectileType);
     }
 
