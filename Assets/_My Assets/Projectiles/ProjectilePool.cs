@@ -64,8 +64,8 @@ public class ProjectilePool : MonoBehaviour
         else
         {
             CreateAndCacheClassProjectiles(guardClassProjectiles);
-            //CreateAndCacheClassProjectiles(strikerClassProjectiles);
-            //CreateAndCacheClassProjectiles(wingClassProjectiles);
+            CreateAndCacheClassProjectiles(strikerClassProjectiles);
+            CreateAndCacheClassProjectiles(wingClassProjectiles);
         }
     }
 
@@ -124,7 +124,7 @@ public class ProjectilePool : MonoBehaviour
 
     public void LaunchPooledProjectile(Transform launchPosition, ProjectileType projectileType, HandEnum hand)
     {
-        PlayerClassEnum playerClass = PlayerClassEnum.Guard; // playerInfoChannel.GetPlayerClass();
+        PlayerClassEnum playerClass = playerInfoChannel.GetPlayerClass();
         ClassProjectiles classProjectiles = GetClassProjectilesByType(playerClass);
 
         Queue<GameObject> pool = hand == HandEnum.RightHand ? classProjectiles.primaryProjectilePool : classProjectiles.secondaryProjectilePool;
